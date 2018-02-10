@@ -1,10 +1,10 @@
-import Header from "../components/Header";
+import Layout from "../components/MyLayout";
 
 const Index = () => (
   <div>
-    <Header />
     <p>Hello Next.js</p>
   </div>
 );
 
-export default Index;
+// This is the same as putting the Layout in the JSX div
+export default () => <Layout page={Index} />;
