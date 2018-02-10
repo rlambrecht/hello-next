@@ -3,9 +3,11 @@ import Link from "next/link";
 
 // We are passing data via a query string parameter (a query param).
 // In our case, it's the “title” query param.
+
+// as does route masking for clean urls
 const PostLink = props => (
   <li>
-    <Link href={`/post?title=${props.title}`}>
+    <Link as={`/p/${props.id}`} href={`/post?title=${props.title}`}>
       <a>{props.title}</a>
     </Link>
   </li>
@@ -15,9 +17,9 @@ export default () => (
   <Layout>
     <h1>My Blog</h1>
     <ul>
-      <PostLink title="Hello Next.js" />
-      <PostLink title="Learn Next.js is awesome" />
-      <PostLink title="Deploy apps with Zeit" />
+      <PostLink id="hello-nextjs" title="Hello Next.js" />
+      <PostLink id="learn-nextjs" title="Learn Next.js is awesome" />
+      <PostLink id="deploy-nextjs" title="Deploy apps with Zeit" />
     </ul>
   </Layout>
 );
